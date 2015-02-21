@@ -6,8 +6,9 @@ class window.AppView extends Backbone.View
   '
 
   events:
-    'click .hit-button': -> @model.get('playerHand').hit()
+    'click .hit-button': -> @model.get('playerHand').hit() #redirect to checkSum() to see if busted if not go hit()
     'click .stand-button': -> @model.get('playerHand').stand()
+    # when this button is clicked, we need to pass the action over to the dealerHand who then draws up to any 17
 
   initialize: ->
     @render()
